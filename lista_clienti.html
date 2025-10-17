@@ -1,0 +1,366 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-10 py-3">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-[#111418]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">TaxFlow</h2>
+            </div>
+            <div class="flex items-center gap-9">
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Dashboard</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Scadenze</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Clienti</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Servizi</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Report</a>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <label class="flex flex-col min-w-40 !h-10 max-w-64">
+              <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                <div
+                  class="text-[#617589] flex border-none bg-[#f0f2f4] items-center justify-center pl-4 rounded-l-lg border-r-0"
+                  data-icon="MagnifyingGlass"
+                  data-size="24px"
+                  data-weight="regular"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  placeholder="Search"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border-none bg-[#f0f2f4] focus:border-none h-full placeholder:text-[#617589] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                  value=""
+                />
+              </div>
+            </label>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9xuie1hAdxQuYdHE_RPqBi9g2kH2iYHYGBgFdxNrktpshHDwvP2OTItTFUpT1FB1_ebRCkx_h70Cf10kfavC2l63brux4TjgfH9KuVo5o0ipDTx-kNpL7hB99SpTaboTH_ZGhA-z7dUQEyLEcZflqpSCnP6ou-7BTqiJtSLFbidpoZs02nQ4CHA62pu5QlDmJYJ98ilCDvaiRCdroRzzxcHygCKSoJVLHLALhx3SWeKyOZdBZpaRPQYOAPnIANPOXvoZ50zDvZg");'
+            ></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#111418] tracking-light text-[32px] font-bold leading-tight min-w-72">Clienti</p>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-medium leading-normal"
+              >
+                <span class="truncate">Nuovo Cliente</span>
+              </button>
+            </div>
+            <div class="px-4 py-3">
+              <label class="flex flex-col min-w-40 h-12 w-full">
+                <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                  <div
+                    class="text-[#617589] flex border-none bg-[#f0f2f4] items-center justify-center pl-4 rounded-l-lg border-r-0"
+                    data-icon="MagnifyingGlass"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    placeholder="Cerca clienti"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border-none bg-[#f0f2f4] focus:border-none h-full placeholder:text-[#617589] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                    value=""
+                  />
+                </div>
+              </label>
+            </div>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-lg border border-[#dbe0e6] bg-white">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-white">
+                      <th class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 px-4 py-3 text-left text-[#111418] w-[400px] text-sm font-medium leading-normal">Nome</th>
+                      <th class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 px-4 py-3 text-left text-[#111418] w-[400px] text-sm font-medium leading-normal">
+                        Codice Fiscale
+                      </th>
+                      <th class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 px-4 py-3 text-left text-[#111418] w-[400px] text-sm font-medium leading-normal">
+                        Partita IVA
+                      </th>
+                      <th class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 px-4 py-3 text-left text-[#111418] w-[400px] text-sm font-medium leading-normal">Tipo</th>
+                      <th class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 px-4 py-3 text-left text-[#111418] w-[400px] text-sm font-medium leading-normal">
+                        Indirizzo
+                      </th>
+                      <th class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 px-4 py-3 text-left text-[#111418] w-[400px] text-sm font-medium leading-normal">
+                        Telefono
+                      </th>
+                      <th class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 px-4 py-3 text-left text-[#111418] w-[400px] text-sm font-medium leading-normal">Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Luca Rossi
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        RSSLCU80A01H501X
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        01234567890
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Persona Fisica
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Roma 1, Milano
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        3331234567
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        luca.rossi@email.com
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Società Alfa SRL
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        12345678901
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        09876543210
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">Società</td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Torino 2, Roma
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        0698765432
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        info@societaalfa.it
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Marco Bianchi
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        BNCMRC75B02G478Y
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        11223344556
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Persona Fisica
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Firenze 3, Napoli
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        3349876543
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        marco.bianchi@email.com
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Studio Beta
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        98765432109
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        65432109876
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Studio Associato
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Venezia 4, Torino
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        0112345678
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        info@studiobeta.it
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Anna Verdi
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        VRDANN85C03F258Z
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        22334455667
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Persona Fisica
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Palermo 5, Firenze
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        3351234567
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        anna.verdi@email.com
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Gamma SPA
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        87654321098
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        54321098765
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">Società</td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Genova 6, Bologna
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        0519876543
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        info@gammaspa.it
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Giuseppe Neri
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        NRIGPP90D04H840W
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        33445566778
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Persona Fisica
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Catania 7, Palermo
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        3362345678
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        giuseppe.neri@email.com
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Delta SRL
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        76543210987
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        43210987654
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">Società</td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Bari 8, Bari
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        0801234567
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        info@deltasrl.it
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Laura Esposito
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        SPSLRA95E05L219U
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        44556677889
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Persona Fisica
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Cagliari 9, Cagliari
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        3373456789
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        laura.esposito@email.com
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe0e6]">
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal">
+                        Studio Epsilon
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        65432109876
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-360 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        32109876543
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-480 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Studio Associato
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-600 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        Via Messina 10, Messina
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-720 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        0909876543
+                      </td>
+                      <td class="table-643ef823-58f2-418b-84a4-86b399b995d4-column-840 h-[72px] px-4 py-2 w-[400px] text-[#617589] text-sm font-normal leading-normal">
+                        info@studioepsilon.it
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-643ef823-58f2-418b-84a4-86b399b995d4-column-120{display: none;}}
+                @container(max-width:240px){.table-643ef823-58f2-418b-84a4-86b399b995d4-column-240{display: none;}}
+                @container(max-width:360px){.table-643ef823-58f2-418b-84a4-86b399b995d4-column-360{display: none;}}
+                @container(max-width:480px){.table-643ef823-58f2-418b-84a4-86b399b995d4-column-480{display: none;}}
+                @container(max-width:600px){.table-643ef823-58f2-418b-84a4-86b399b995d4-column-600{display: none;}}
+                @container(max-width:720px){.table-643ef823-58f2-418b-84a4-86b399b995d4-column-720{display: none;}}
+                @container(max-width:840px){.table-643ef823-58f2-418b-84a4-86b399b995d4-column-840{display: none;}}
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
