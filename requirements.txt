@@ -1,0 +1,7 @@
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Flask-Bcrypt
+Flask-Cors
+SQLAlchemy < 2.0
+Werkzeug < 3.0

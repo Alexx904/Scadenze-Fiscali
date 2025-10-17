@@ -142,6 +142,7 @@
                   <span class="truncate">Annulla</span>
                 </button>
                 <button
+                  id="save-client-button"
                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1172d4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
                 >
                   <span class="truncate">Salva</span>
@@ -152,5 +153,48 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const saveButton = document.getElementById('save-client-button');
+        saveButton.addEventListener('click', async function (event) {
+          event.preventDefault();
+
+          const name = document.querySelector('input[placeholder="Inserisci il nome"]').value;
+          const surname_company_name = document.querySelector('input[placeholder="Inserisci il cognome o la ragione sociale"]').value;
+          const tax_code_vat_number = document.querySelector('input[placeholder="Inserisci il codice fiscale o la partita IVA"]').value;
+          const email = document.querySelector('input[placeholder="Inserisci l\'email"]').value;
+          const phone = document.querySelector('input[placeholder="Inserisci il numero di telefono"]').value;
+          const address = document.querySelector('input[placeholder="Inserisci l\'indirizzo"]').value;
+          const city = document.querySelector('input[placeholder="Inserisci la città"]').value;
+          const postal_code = document.querySelector('input[placeholder="Inserisci il CAP"]').value;
+          const province = document.querySelector('input[placeholder="Inserisci la provincia"]').value;
+
+          const response = await fetch('/clients', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name,
+              surname_company_name,
+              tax_code_vat_number,
+              email,
+              phone,
+              address,
+              city,
+              postal_code,
+              province,
+            }),
+          });
+
+          if (response.ok) {
+            alert('Cliente aggiunto con successo!');
+            window.location.href = 'lista_clienti.html';
+          } else {
+            alert('Errore durante l\\'aggiunta del cliente.');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

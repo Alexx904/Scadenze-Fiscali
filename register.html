@@ -114,29 +114,87 @@
               <label
                 class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#dbe0e6] px-4 h-11 text-[#111418] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#1172d4] relative cursor-pointer"
               >
-                Freelance Accountant
-                <input type="radio" class="invisible absolute" name="e4566e07-26ac-4962-8dba-488dc6f9d868" />
+                Commercialista
+                <input type="radio" class="invisible absolute" name="e4566e07-26ac-4962-8dba-488dc6f9d868" value="Commercialista" />
               </label>
               <label
                 class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#dbe0e6] px-4 h-11 text-[#111418] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#1172d4] relative cursor-pointer"
               >
                 Accounting Firm
-                <input type="radio" class="invisible absolute" name="e4566e07-26ac-4962-8dba-488dc6f9d868" />
+                <input type="radio" class="invisible absolute" name="e4566e07-26ac-4962-8dba-488dc6f9d868" value="Studio Commercialista" />
               </label>
             </div>
             <div class="flex px-4 py-3">
               <button
+                id="register-button"
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-[#1172d4] text-white text-base font-bold leading-normal tracking-[0.015em]"
               >
                 <span class="truncate">Complete Registration</span>
               </button>
             </div>
             <p class="text-[#617589] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">
-              Already have an account? &lt;a href="#" class="text-blue-500"&gt;Login&lt;/a&gt;
+              Already have an account? &lt;a href="login.html" class="text-blue-500"&gt;Login&lt;/a&gt;
             </p>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const registerButton = document.getElementById('register-button');
+
+        registerButton.addEventListener('click', async function (event) {
+          event.preventDefault();
+
+          const firstName = document.querySelector('input[placeholder="Enter your first name"]').value;
+          const lastName = document.querySelector('input[placeholder="Enter your last name"]').value;
+          const companyName = document.querySelector('input[placeholder="Enter your company name"]').value;
+          const vatNumber = document.querySelector('input[placeholder="Enter your VAT number or tax ID"]').value;
+          const email = document.querySelector('input[placeholder="Enter your email"]').value;
+          const password = document.querySelector('input[placeholder="Create a password"]').value;
+          const confirmPassword = document.querySelector('input[placeholder="Confirm your password"]').value;
+          const roleElement = document.querySelector('input[name="e4566e07-26ac-4962-8dba-488dc6f9d868"]:checked');
+          const role = roleElement ? roleElement.value : '';
+
+          if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            return;
+          }
+
+          console.log('Sending registration request...');
+          try {
+            const response = await fetch('/register', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                first_name: firstName,
+                last_name: lastName,
+                company_name: companyName,
+                vat_number: vatNumber,
+                email: email,
+                password: password,
+                role: role,
+              }),
+            });
+            console.log('Response received:', response);
+
+            if (response.ok) {
+              console.log('Registration successful!');
+              alert('Registration successful!');
+              window.location.href = 'login.html';
+            } else {
+              const error = await response.json();
+              console.error('Registration failed:', error);
+              alert(`Registration failed: ${error.message}`);
+            }
+          } catch (error) {
+            console.error('Error during registration:', error);
+            alert('An error occurred during registration. Please try again.');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

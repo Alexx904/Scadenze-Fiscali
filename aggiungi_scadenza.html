@@ -92,6 +92,7 @@
               <label class="flex gap-x-3 py-3 flex-row">
                 <input
                   type="checkbox"
+                  name="notify_1_day"
                   class="h-5 w-5 rounded border-[#dbe0e6] border-2 bg-transparent text-[#1172d4] checked:bg-[#1172d4] checked:border-[#1172d4] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dbe0e6] focus:outline-none"
                 />
                 <p class="text-[#111418] text-base font-normal leading-normal">1 giorno prima</p>
@@ -99,6 +100,7 @@
               <label class="flex gap-x-3 py-3 flex-row">
                 <input
                   type="checkbox"
+                  name="notify_7_days"
                   class="h-5 w-5 rounded border-[#dbe0e6] border-2 bg-transparent text-[#1172d4] checked:bg-[#1172d4] checked:border-[#1172d4] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dbe0e6] focus:outline-none"
                 />
                 <p class="text-[#111418] text-base font-normal leading-normal">7 giorni prima</p>
@@ -106,6 +108,7 @@
               <label class="flex gap-x-3 py-3 flex-row">
                 <input
                   type="checkbox"
+                  name="notify_15_days"
                   class="h-5 w-5 rounded border-[#dbe0e6] border-2 bg-transparent text-[#1172d4] checked:bg-[#1172d4] checked:border-[#1172d4] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dbe0e6] focus:outline-none"
                 />
                 <p class="text-[#111418] text-base font-normal leading-normal">15 giorni prima</p>
@@ -119,6 +122,7 @@
                   <span class="truncate">Annulla</span>
                 </button>
                 <button
+                  id="save-deadline-button"
                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1172d4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
                 >
                   <span class="truncate">Salva</span>
@@ -129,5 +133,54 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', async function () {
+        const clientSelect = document.querySelector('select');
+        const response = await fetch('/clients');
+        if (response.ok) {
+          const clients = await response.json();
+          clients.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id;
+            option.textContent = client.name;
+            clientSelect.appendChild(option);
+          });
+        }
+
+        const saveButton = document.getElementById('save-deadline-button');
+        saveButton.addEventListener('click', async function (event) {
+          event.preventDefault();
+
+          const clientId = clientSelect.value;
+          const name = document.querySelector('input[placeholder="Es. Dichiarazione IVA"]').value;
+          const dueDate = document.querySelector('input[placeholder="Seleziona Data"]').value;
+          const notify1Day = document.querySelector('input[type="checkbox"][name="notify_1_day"]').checked;
+          const notify7Days = document.querySelector('input[type="checkbox"][name="notify_7_days"]').checked;
+          const notify15Days = document.querySelector('input[type="checkbox"][name="notify_15_days"]').checked;
+
+          const deadlineResponse = await fetch('/deadlines', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              client_id: clientId,
+              name,
+              due_date: dueDate,
+              notify_1_day: notify1Day,
+              notify_7_days: notify7Days,
+              notify_15_days: notify15Days,
+            }),
+          });
+
+          if (deadlineResponse.ok) {
+            alert('Scadenza aggiunta con successo!');
+            window.location.href = 'lista_scadenze.html';
+          } else {
+            alert('Errore durante l\\'aggiunta della scadenza.');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

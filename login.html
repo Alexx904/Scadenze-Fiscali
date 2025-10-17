@@ -75,15 +75,52 @@
             <p class="text-[#617589] text-sm font-normal leading-normal pb-3 pt-1 px-4 underline">Forgot password?</p>
             <div class="flex px-4 py-3">
               <button
+                id="login-button"
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-[#1172d4] text-white text-base font-bold leading-normal tracking-[0.015em]"
               >
                 <span class="truncate">Login</span>
               </button>
             </div>
-            <p class="text-[#617589] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center underline">Don't have an account? Sign up</p>
+            <p class="text-[#617589] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center underline">Don't have an account? <a href="register.html">Sign up</a></p>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.getElementById('login-button');
+        loginButton.addEventListener('click', async function (event) {
+          event.preventDefault();
+
+          const email = document.querySelector('input[placeholder="Enter your email or username"]').value;
+          const password = document.querySelector('input[placeholder="Enter your password"]').value;
+
+          const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: email,
+              password: password,
+            }),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem('userRole', data.role);
+            if (data.role === 'Admin') {
+              window.location.href = 'dashboard_admin.html';
+            } else if (data.role === 'Commercialista') {
+              window.location.href = 'dashboard_commercialista_autonomo.html';
+            } else if (data.role === 'Studio Commercialista') {
+              window.location.href = 'dashboard_studio_di_commercialisti.html';
+            }
+          } else {
+            alert('Login failed. Please check your credentials.');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
